@@ -8,7 +8,9 @@ import static org.junit.Assert.*;
 @RunWith(Parameterized.class)
 public class BunTest {
     Bun bun;
+
     String name;
+
     float price;
 
     public BunTest(String name, float price) {
@@ -16,7 +18,7 @@ public class BunTest {
         this.price = price;
     }
 
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name = "Тестовые данные: Булочка - {0} Цена - {1}")
     public static Object[][] getData() {
         return new Object[][] {
                 {"Пшеничная", 100},
@@ -30,17 +32,11 @@ public class BunTest {
         );
     }
 
-    /*
-     * Test check get bun name
-     * */
     @Test
     public void checkGetName() {
         assertEquals(name, bun.getName());
     }
 
-    /*
-     * Test check get bun price
-     * */
     @Test
     public void checkGetPrice() {
         assertEquals(price, bun.getPrice(), 0);

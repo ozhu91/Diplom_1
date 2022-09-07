@@ -5,9 +5,6 @@ import praktikum.Bun;
 import praktikum.Database;
 import praktikum.Ingredient;
 
-import static org.hamcrest.CoreMatchers.instanceOf;
-
-
 public class DatabaseTest {
     Database database;
 
@@ -15,7 +12,6 @@ public class DatabaseTest {
     public void afterMethod() {
         database = new Database();
     }
-
 
     @Test
     public void checkAvailableBuns() {
